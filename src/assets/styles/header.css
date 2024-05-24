@@ -5,7 +5,7 @@
 .header {
     display: flex;
     width: 100%;
-    background-color: #000;
+    background-color: #191919;
 }
 
 .header-large, .header-medium {
@@ -13,17 +13,18 @@
 }
 
 .header-large {
-    height: 6.625rem;
+    height: 8rem;
 }
 
 .header-medium {
-    height: 5.5rem;
+    height: 8rem;
 }
 
 .header-small {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    height: 6rem;
 }
 
 .search-container {
@@ -31,6 +32,7 @@
     align-items: center;
     order: 1;
     flex-grow: 1;
+    max-width: 25rem;
     padding-left: 1rem;
 }
 
@@ -49,8 +51,8 @@
 }
 
 .contBuscador img {
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 2rem;
+    height: 2rem;
     padding-left: 1rem;
 }
 
@@ -73,13 +75,23 @@
 .nav-container.hidden {
     display: none;
 }
+.nav-mid {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
 .nav-container a {
     color: #fff;
     text-decoration: none;
-    font-size: 1.5rem;
-    margin: 0 2rem;
+    font-size: 2rem;
+    margin: 0 1rem;
     transition: all 0.3s;
+}
+
+.nav-mid a{
+    font-size: 1rem;
 }
 
 .nav-container a:hover {

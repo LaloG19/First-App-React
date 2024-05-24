@@ -1,34 +1,31 @@
-import '../../App.css';
-
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
-import 'swiper/css/pagination';
+import Slide1 from '../../assets/img/Slide1.jpg';
+import Slide2 from '../../assets/img/Slide2.jpg';
+import Slide3 from '../../assets/img/Slide3.jpg';
 
-import { Pagination } from 'swiper/modules';
-
-export default function slider() {
+const MySlider = () => {
   return (
     <>
-      <Swiper
-        slidesPerView={4}
-        spaceBetween={30}
-        centeredSlides={true}
-        pagination={{
-          clickable: true,
-        }}
-        modules={[Pagination]}
-        className="mySwiper"
-      >
-        <SwiperSlide>Slide 1</SwiperSlide>
-        <SwiperSlide>Slide 2</SwiperSlide>
-        <SwiperSlide>Slide 3</SwiperSlide>
-        <SwiperSlide>Slide 4</SwiperSlide>
-        <SwiperSlide>Slide 5</SwiperSlide>
-        <SwiperSlide>Slide 6</SwiperSlide>
-        <SwiperSlide>Slide 7</SwiperSlide>
-        <SwiperSlide>Slide 8</SwiperSlide>
-        <SwiperSlide>Slide 9</SwiperSlide>
-      </Swiper>
+    <Swiper
+      spaceBetween={50}
+      slidesPerView={3}
+      onSlideChange={() => console.log('slide change')}
+      onSwiper={(swiper: any) => console.log(swiper)}
+    >
+      <SwiperSlide> <img src={Slide1} alt="Slide1"/> </SwiperSlide>
+      <SwiperSlide> <img src={Slide2} alt="Slide1"/> </SwiperSlide>
+      <SwiperSlide> <img src={Slide3} alt="Slide1"/> </SwiperSlide>
+      <SwiperSlide> <img src={Slide1} alt="Slide1"/> </SwiperSlide>
+      <SwiperSlide> <img src={Slide2} alt="Slide1"/> </SwiperSlide>
+      <SwiperSlide> <img src={Slide3} alt="Slide1"/> </SwiperSlide>
+      <SwiperSlide> <img src={Slide1} alt="Slide1"/> </SwiperSlide>
+      <SwiperSlide> <img src={Slide2} alt="Slide1"/> </SwiperSlide>
+      <SwiperSlide> <img src={Slide3} alt="Slide1"/> </SwiperSlide>
+      ...
+    </Swiper>
     </>
   );
 }
+
+export default MySlider; 

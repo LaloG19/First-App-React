@@ -5,7 +5,7 @@ import searchIcon from '../../assets/svg/search.svg';
 import userIcon from '../../assets/svg/user.svg';
 import MenuIcon from '@mui/icons-material/Menu';
 
-const MyHeader = () => {
+const MyHeader = (props: any) => {
     const smallScreen = useMediaQuery("(max-width: 600px)");
     const mediumScreen = useMediaQuery("(min-width: 601px) and (max-width: 1024px)");
     const [searchActive, setSearchActive] = useState(false);
@@ -43,13 +43,13 @@ const MyHeader = () => {
                 )}
                 <Grid item xs={smallScreen ? 6 : 'auto'} className={`search-container ${searchActive ? 'search-active' : ''}`}>
                     <div className="contBuscador" onClick={() => smallScreen && setSearchActive(!searchActive)}>
-                        <img className="imgInp" src={searchIcon} alt="Buscar" />
+                        <img src={searchIcon} alt="Buscar" />
                         {!smallScreen || searchActive ? <input type="text" className="inpBuscador" /> : null}
                     </div>
                 </Grid>
                 {!smallScreen && (
                     <Grid item className={`nav-container ${searchActive && smallScreen ? 'hidden' : ''}`}>
-                        <nav className={smallScreen ? 'nav-small' : ''}>
+                        <nav className={smallScreen ? 'nav-small' : mediumScreen ? 'nav-mid' : ''}>
                             <a href="/">Novedades</a>
                             <a href="/">Ofertas</a>
                             <a href="/">Más populares</a>

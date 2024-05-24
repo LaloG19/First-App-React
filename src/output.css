@@ -1,8 +1,5 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 /* Slider */
+
 .swiper {
   width: 100%;
   height: 100%;
@@ -12,7 +9,6 @@
   text-align: center;
   font-size: 18px;
   background: #fff;
-
   /* Center slide text vertically */
   display: flex;
   justify-content: center;
@@ -25,5 +21,4 @@
   height: 100%;
   object-fit: cover;
 }
-
 
