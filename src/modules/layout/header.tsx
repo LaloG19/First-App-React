@@ -18,6 +18,10 @@ const MyHeader = (props: any) => {
         setDrawerOpen(open);
     };
 
+    const handleClick = () => {
+        
+    }
+
     return (
         <header className={`header ${smallScreen ? 'header-small' : mediumScreen ? 'header-medium' : 'header-large'}`}>
             <Grid container alignItems="center" justifyContent="space-between">
@@ -42,7 +46,7 @@ const MyHeader = (props: any) => {
                     </Grid>
                 )}
                 <Grid item xs={smallScreen ? 6 : 'auto'} className={`search-container ${searchActive ? 'search-active' : ''}`}>
-                    <div className="contBuscador" onClick={() => smallScreen && setSearchActive(!searchActive)}>
+                    <div className="contBuscador" onClick={handleClick}>
                         <img src={searchIcon} alt="Buscar" />
                         {!smallScreen || searchActive ? <input type="text" className="inpBuscador" /> : null}
                     </div>

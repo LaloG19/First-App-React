@@ -1,0 +1,58 @@
+
+.grid-platforms{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 15%;
+    width: 100%;
+    padding-left: 15%;
+    padding-right: 15%;
+}
+
+.grid-games{
+    padding: 4rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 1.5rem;
+    width: 15rem;
+}
+
+.grid-games-small{
+    width: 7rem;
+}
+
+.games{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: nowrap;
+    width: 10rem;
+    height: 100%;
+    margin-bottom: 0.5rem;
+    gap: 6rem;
+}
+.games-sm{
+    width: 3rem;
+    gap: 3rem;
+}
+
+.platform-icon{
+    width: 4rem;
+    height: 4rem;
+}
+
+.game-icon{
+    width: 10rem;
+    height: 10rem;
+    cursor: pointer;
+}
+.game-icon-sm{
+    width: 2.5rem;
+    height: 2.5rem;
+    cursor: pointer;
+}
