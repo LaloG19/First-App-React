@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Grid, useMediaQuery, IconButton, Drawer, List, ListItem, ListItemText } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 import '../../assets/styles/header.css';
 import searchIcon from '../../assets/svg/search.svg';
 import userIcon from '../../assets/svg/user.svg';
@@ -10,6 +11,7 @@ const MyHeader = (props: any) => {
     const mediumScreen = useMediaQuery("(min-width: 601px) and (max-width: 1024px)");
     const [searchActive, setSearchActive] = useState(false);
     const [drawerOpen, setDrawerOpen] = useState(false);
+    const navigate = useNavigate();
 
     const toggleDrawer = (open: any) => (event: any) => {
         if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
@@ -19,8 +21,8 @@ const MyHeader = (props: any) => {
     };
 
     const handleClick = () => {
-        
-    }
+        navigate('/game/');
+    };
 
     return (
         <header className={`header ${smallScreen ? 'header-small' : mediumScreen ? 'header-medium' : 'header-large'}`}>

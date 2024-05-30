@@ -1,10 +1,10 @@
-
+import React from 'react';
 import './App.css';
 import { Box } from '@mui/system';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import Grid from '@mui/material/Grid';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import MyTable from './modules/table/table';
 
 import MyHeader from './modules/layout/header';
 import MySlider from './modules/slider/slider';
@@ -13,17 +13,21 @@ import MyPlatforms from './modules/Platforms';
 import MyGames from './modules/Games';
 import MyGameSelected from './modules/gameSelected/gameSelected';
 
+import Popular1 from './assets/img/populars/1.png';
+import Popular2 from './assets/img/populars/2.png';
+import Popular3 from './assets/img/populars/3.png';
+
 const App = () => {
   const smallScreen = useMediaQuery("(max-width: 600px)");
   const mediumScreen = useMediaQuery("(min-width: 601px) and (max-width: 1024px)");
   const plat = [0, 1, 2, 3];
   
   return (
-    <>
+    <Router>
+      <>
         <Grid container alignItems="center" justifyContent="center">
           <MyHeader smallScreen={smallScreen} mediumScreen={mediumScreen} />
         </Grid>
-        
 
         <MyTitle smallScreen={smallScreen} mediumScreen={mediumScreen} texto={'Novedades'} />
 
@@ -74,19 +78,27 @@ const App = () => {
             marginTop: smallScreen ? '1rem' : mediumScreen ? '2rem' : '3rem',
              marginBottom: smallScreen ? '1rem' : mediumScreen ? '2rem' : '3rem',
           }}>
-            <div style={{ display: 'flex', width: `${mediumScreen ? '10rem' : '20rem'}`, height: `${mediumScreen ? '10rem' : '20rem'}`, backgroundColor: 'red' }}>
+            <div style={{ display: 'flex', cursor: 'pointer' , width: `${mediumScreen ? '10rem' : '20rem'}`, height: `${mediumScreen ? '10rem' : '20rem'}` }}>
+              <img src={Popular1} alt="1" />
             </div>
-            <div style={{ display: 'flex', width: `${mediumScreen ? '15rem' : '25rem'}`, height: `${mediumScreen ? '15rem' : '25rem'}`, backgroundColor: 'green' }}>
+            <div style={{ display: 'flex', cursor: 'pointer' , width: `${mediumScreen ? '15rem' : '25rem'}`, height: `${mediumScreen ? '15rem' : '25rem'}` }}>
+              <img src={Popular2} alt="2" />
             </div>
-            <div style={{ display: 'flex', width: `${mediumScreen ? '10rem' : '20rem'}`, height: `${mediumScreen ? '10rem' : '20rem'}`, backgroundColor: 'blue' }}>
+            <div style={{ display: 'flex', cursor: 'pointer' , width: `${mediumScreen ? '10rem' : '20rem'}`, height: `${mediumScreen ? '10rem' : '20rem'}` }}>
+              <img src={Popular3} alt="3" />
             </div>
           </Box>
         </Grid>
         
-        <MyGameSelected />
+        <MyTitle smallScreen={smallScreen} mediumScreen={mediumScreen} texto={'Table API'} />
+          <MyTable/>
 
-    </>
-  )
+        <Routes>
+          <Route path="/game" element={<MyGameSelected />} />
+        </Routes>
+      </>
+    </Router>
+  );
 };
 
 export default App;
